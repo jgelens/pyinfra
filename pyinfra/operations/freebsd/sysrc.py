@@ -71,7 +71,7 @@ def sysrc(
     elif command == SYSRC_SET:
         sign = "="
 
-        if not overwrite and host.get_fact(Sysrc, parameter=parameter, jail=jail):
+        if host.get_fact(Sysrc, parameter=parameter, jail=jail) == value:
             host.noop(f"sysrc(8) parameter '{parameter}' already set")
             return
 

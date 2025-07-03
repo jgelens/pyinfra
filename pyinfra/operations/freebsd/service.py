@@ -108,7 +108,7 @@ def service(
             if isinstance(command, str):
                 command = [command]
 
-            args.extend([QuoteString(c) for c in command])
+            args.extend(command)
 
     else:
         raise OperationValueError(f"Invalid service command: {srvstate}")
